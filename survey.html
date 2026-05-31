@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Survey | YOW FEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .form-container {
+            background: var(--color-surface);
+            padding: 4rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+        .form-group label.question-title {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--color-primary);
+        }
+        .text-input {
+            width: 100%;
+            background: #111;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        .text-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        /* Hidden iframe to prevent redirect */
+        .hidden-iframe {
+            display: none;
+        }
+        #success-msg {
+            display: none;
+            text-align: center;
+            background: #1a1a1a;
+            padding: 3rem;
+            border: 2px solid var(--color-primary);
+            margin-top: 2rem;
+        }
+        /* Custom image grid for artists */
+        .artist-select-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        .artist-select-card {
+            cursor: pointer;
+            display: block;
+        }
+        .artist-select-card input[type="checkbox"] {
+            display: none;
+        }
+        .artist-card-inner {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            background: #1a1a1a;
+        }
+        .artist-select-card:hover .artist-card-inner {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+        .artist-card-inner img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            display: block;
+        }
+        .artist-select-name {
+            background: #111;
+            text-align: center;
+            padding: 0.8rem 0.5rem;
+            font-family: var(--font-heading);
+            color: #fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+        /* State when selected */
+        .artist-select-card input[type="checkbox"]:checked + .artist-card-inner {
+            border-color: var(--color-primary);
+            box-shadow: 0 5px 20px rgba(255, 85, 0, 0.4);
+            transform: scale(1.02);
+        }
+        .artist-select-card input[type="checkbox"]:checked + .artist-card-inner img {
+            opacity: 0.7;
+        }
+        .artist-select-card input[type="checkbox"]:checked + .artist-card-inner .artist-select-name {
+            background: var(--color-primary);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="navbar-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></a>
+            <button class="nav-toggle">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="lineup.html">Lineup</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="guide.html">Guide</a>
+                <a href="riseup.html">Rise Up</a>
+                <a href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" style="padding-bottom: 3rem;">
+        <div class="container">
+            <h1 class="display">FESTIVAL FEEDBACK</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">We would love to hear your thoughts or feedback on how we can improve your 2026 YOW Fest day 2 experience!</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container fade-in">
+            <!-- The form posts to the Google Form URL. We use a hidden iframe so the user stays on the site. -->
+            <iframe name="hidden_iframe" class="hidden-iframe" id="hidden_iframe" onload="if(submitted){document.getElementById('survey-form').style.display='none'; document.getElementById('success-msg').style.display='block';}"></iframe>
+            
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFtn-dkg_stNTlHcQ_0VBScoXvmu_7gqZGv55TeAAb5DBTiA/formResponse" method="POST" target="hidden_iframe" id="survey-form" class="form-container" onsubmit="submitted=true;">
+                
+                <div class="form-group">
+                    <label class="question-title">Which artists would you like see headline YOWFest 2026?</label>
+                    <div class="artist-select-grid">
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Fivio Foreign"><div class="artist-card-inner"><img src="assets/images/survey/Fivio Foreign.png" alt="Fivio Foreign"><div class="artist-select-name">Fivio Foreign</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Dej Loaf"><div class="artist-card-inner"><img src="assets/images/survey/Dej Loaf.png" alt="Dej Loaf"><div class="artist-select-name">Dej Loaf</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Lil Mosey"><div class="artist-card-inner"><img src="assets/images/survey/Lil Mosey.jpg" alt="Lil Mosey"><div class="artist-select-name">Lil Mosey</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Jay Critch"><div class="artist-card-inner"><img src="assets/images/survey/Jay Critch.jpeg" alt="Jay Critch"><div class="artist-select-name">Jay Critch</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Smokepurp"><div class="artist-card-inner"><img src="assets/images/survey/SmokePurp.jpeg" alt="Smokepurp"><div class="artist-select-name">Smokepurp</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Tyla Yaweh"><div class="artist-card-inner"><img src="assets/images/survey/Tyla Yaweh.jpg" alt="Tyla Yaweh"><div class="artist-select-name">Tyla Yaweh</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Gunnr"><div class="artist-card-inner"><img src="assets/images/survey/GUNNR.jpg" alt="Gunnr"><div class="artist-select-name">Gunnr</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="YK Osiris"><div class="artist-card-inner"><img src="assets/images/survey/YK OSIRIS.jpeg" alt="YK Osiris"><div class="artist-select-name">YK Osiris</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Richey Wess"><div class="artist-card-inner"><img src="assets/images/survey/richiewess.jpg" alt="Richey Wess"><div class="artist-select-name">Richey Wess</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Young Dred"><div class="artist-card-inner"><img src="assets/images/survey/YungDred.jpg" alt="Young Dred"><div class="artist-select-name">Young Dred</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Lil Xan"><div class="artist-card-inner"><img src="assets/images/survey/lil xan.jpg" alt="Lil Xan"><div class="artist-select-name">Lil Xan</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="YSN Fab"><div class="artist-card-inner"><img src="assets/images/survey/ysn-fab.jpg" alt="YSN Fab"><div class="artist-select-name">YSN Fab</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Phora"><div class="artist-card-inner"><img src="assets/images/survey/phora.jpg" alt="Phora"><div class="artist-select-name">Phora</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="Fresco"><div class="artist-card-inner"><img src="assets/images/survey/Fresco.jpeg" alt="Fresco"><div class="artist-select-name">Fresco</div></div></label>
+                        <label class="artist-select-card"><input type="checkbox" name="entry.1591633300" value="NorthSideBaby"><div class="artist-card-inner"><img src="assets/images/survey/northsidebaby.jpg" alt="NorthSideBaby"><div class="artist-select-name">NorthSideBaby</div></div></label>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question-title">Are you more interested in?</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <label class="radio-option"><input type="radio" name="entry.1696159737" value="Headliners"> Headliners</label>
+                        <label class="radio-option"><input type="radio" name="entry.1696159737" value="Emerging/Local Artists"> Emerging/Local Artists</label>
+                        <label class="radio-option"><input type="radio" name="entry.1696159737" value="Both"> Both</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question-title">Where did you hear about YOWFest?</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <label class="radio-option"><input type="radio" name="entry.485428648" value="Instagram"> Instagram</label>
+                        <label class="radio-option"><input type="radio" name="entry.485428648" value="TikTok"> TikTok</label>
+                        <label class="radio-option"><input type="radio" name="entry.485428648" value="Friends/Word of Mouth"> Friends/Word of Mouth</label>
+                        <label class="radio-option"><input type="radio" name="entry.485428648" value="Email"> Email</label>
+                        <label class="radio-option"><input type="radio" name="entry.485428648" value="Local artists/Openers"> Local artists/Openers</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question-title">What would motivate you the most to attend this year's festival?</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <label class="radio-option"><input type="radio" name="entry.326955045" value="Lineup"> Lineup</label>
+                        <label class="radio-option"><input type="radio" name="entry.326955045" value="Price"> Price</label>
+                        <label class="radio-option"><input type="radio" name="entry.326955045" value="Experience (vibes, activites)"> Experience (vibes, activites)</label>
+                        <label class="radio-option"><input type="radio" name="entry.326955045" value="Location"> Location</label>
+                        <label class="radio-option"><input type="radio" name="entry.326955045" value="Friends/Social aspect"> Friends/Social aspect</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="question-title">What would make this festival feel different from others?</label>
+                    <textarea name="entry.879531967" class="text-input" rows="4" placeholder="Your answer"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">SUBMIT FEEDBACK</button>
+            </form>
+
+            <div id="success-msg">
+                <h2 style="color: var(--color-primary); font-family: var(--font-display); font-size: 3.5rem;">THANK YOU!</h2>
+                <p style="font-size: 1.2rem;">Your feedback has been submitted successfully.</p>
+                <a href="index.html" class="btn" style="margin-top: 2rem;">RETURN HOME</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></div>
+            <div class="copyright">
+                &copy; 2026 YOWFEST & Rise Up Canada. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>var submitted = false;</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets | YOW FEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .ticket-tier {
+            background: var(--color-surface);
+            padding: 3rem;
+            border: 2px solid #333;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .ticket-tier:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-primary);
+        }
+        .ticket-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .ticket-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            font-family: var(--font-heading);
+        }
+        .ticket-features {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        .ticket-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .ticket-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="navbar-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></a>
+            <button class="nav-toggle">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="lineup.html">Lineup</a>
+                <a href="tickets.html" class="active">Tickets</a>
+                <a href="guide.html">Guide</a>
+                <a href="riseup.html">Rise Up</a>
+                <a href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display">TICKETS</h1>
+            <p>Secure your spot at Ottawa's biggest multicultural urban music festival.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container fade-in">
+            <div class="grid-2">
+                <!-- GA Ticket -->
+                <div class="ticket-tier">
+                    <h2 class="ticket-title">GENERAL ADMISSION</h2>
+                    <div class="ticket-price">TBA</div>
+                    <ul class="ticket-features">
+                        <li>Access to all stages and performances</li>
+                        <li>Access to food vendors and activations</li>
+                        <li>All-ages general viewing areas</li>
+                        <li>19+ Access to licensed areas (ID required)</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">COMING SOON</a>
+                </div>
+
+                <!-- VIP Ticket -->
+                <div class="ticket-tier" style="border-color: var(--color-primary);">
+                    <h2 class="ticket-title">VIP EXPERIENCE</h2>
+                    <div class="ticket-price">TBA</div>
+                    <ul class="ticket-features">
+                        <li>Expedited VIP Entry</li>
+                        <li>Access to exclusive VIP viewing areas</li>
+                        <li>Dedicated VIP Bars and Food Services</li>
+                        <li>Premium washroom facilities</li>
+                        <li>Limited edition merchandise item</li>
+                    </ul>
+                    <a href="#" class="btn" style="width: 100%;">COMING SOON</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p>Tickets are purchased via Eventbrite. Prices do not include applicable taxes and fees.</p>
+                <p><strong>ALL SALES ARE FINAL. NO REFUNDS OR EXCHANGES.</strong></p>
+                <p>Event is rain or shine. Lineup subject to change.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></div>
+            <div class="copyright">
+                &copy; 2026 YOWFEST & Rise Up Canada. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

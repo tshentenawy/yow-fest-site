@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineup | YOW FEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .lineup-day {
+            margin-bottom: 6rem;
+        }
+        .day-title {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+        .lineup-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .artist-card {
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #2a2a2a;
+            transition: border-color 0.3s ease;
+            text-decoration: none;
+        }
+        .artist-card:hover {
+            border-color: var(--color-primary);
+        }
+        .artist-card img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, transform 0.5s ease;
+        }
+        .artist-card:hover img {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+        .artist-name {
+            font-family: var(--font-heading);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .artist-card:hover .artist-name {
+            transform: scale(1.1);
+            color: var(--color-primary);
+        }
+        .headliner img, .co-headliner img {
+            object-position: 50% 15%;
+        }
+        .headliner {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        .headliner .artist-name {
+            font-size: 6rem;
+        }
+        .co-headliner {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        .co-headliner .artist-name {
+            font-size: 5rem;
+        }
+        .artist-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .artist-row .artist-card {
+            flex: 1;
+            aspect-ratio: 1;
+        }
+        .artist-row .artist-name {
+            font-size: 2.5rem;
+        }
+        .artist-label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            z-index: 3;
+        }
+        @media (max-width: 768px) {
+            .artist-row {
+                flex-direction: column;
+            }
+            .headliner, .co-headliner, .artist-row .artist-card {
+                aspect-ratio: 1;
+            }
+            .headliner .artist-name { font-size: 4rem; }
+            .co-headliner .artist-name { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="navbar-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></a>
+            <button class="nav-toggle">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="lineup.html" class="active">Lineup</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="guide.html">Guide</a>
+                <a href="riseup.html">Rise Up</a>
+                <a href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display">2026 LINEUP</h1>
+            <p>Performances, Stages, and Set Times.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container fade-in">
+            <div class="lineup-container fade-in">
+                <a href="https://www.instagram.com/jaycritch/?hl=en" target="_blank" class="artist-card headliner">
+                    <div class="artist-label">HEADLINER</div>
+                    <img src="assets/images/lineup/jay-critch.jpeg" alt="Jay Critch">
+                    <div class="artist-name">Jay Critch</div>
+                </a>
+                <a href="https://www.instagram.com/xavtrudeau_/?hl=en" target="_blank" class="artist-card co-headliner">
+                    <div class="artist-label" style="background: #333;">CO-HEADLINER</div>
+                    <img src="assets/images/lineup/xav.jpeg" alt="XAV">
+                    <div class="artist-name">XAV</div>
+                </a>
+                <div class="artist-row">
+                    <a href="https://www.instagram.com/alhambra.band.musique/" target="_blank" class="artist-card">
+                        <img src="assets/images/lineup/alhambra-band.jpeg" alt="Alhambra Band">
+                        <div class="artist-name">Alhambra Band</div>
+                    </a>
+                    <a href="https://www.instagram.com/gretchnofficial/" target="_blank" class="artist-card">
+                        <img src="assets/images/lineup/gretchn.jpg" alt="GRETCH'N">
+                        <div class="artist-name">GRETCH'N</div>
+                    </a>
+                    <a href="https://www.instagram.com/xxkatieclarkexx/" target="_blank" class="artist-card">
+                        <img src="assets/images/lineup/katie-clarke.jpg" alt="Katie Clarke">
+                        <div class="artist-name">Katie Clarke</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3>LINEUP SUBJECT TO CHANGE.</h3>
+                <a href="tickets.html" class="btn" style="margin-top: 2rem;">GRAB YOUR TICKETS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></div>
+            <div class="copyright">
+                &copy; 2026 YOWFEST & Rise Up Canada. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
