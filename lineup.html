@@ -9,16 +9,26 @@
         .lineup-day {
             margin-bottom: 6rem;
         }
+        .lineup-day {
+            margin-bottom: 6rem;
+        }
         .day-title {
             text-align: center;
             font-family: var(--font-display);
             font-size: 4rem;
             color: var(--color-primary);
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
-        .lineup-container {
-            display: flex;
-            flex-direction: column;
+        .day-subtitle {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
         }
         .artist-card {
@@ -31,6 +41,7 @@
             border: 2px solid #2a2a2a;
             transition: border-color 0.3s ease;
             text-decoration: none;
+            aspect-ratio: 1;
         }
         .artist-card:hover {
             border-color: var(--color-primary);
@@ -39,6 +50,7 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
+            object-position: 50% 15%;
             opacity: 0.5;
             transition: opacity 0.3s ease, transform 0.5s ease;
         }
@@ -48,6 +60,7 @@
         }
         .artist-name {
             font-family: var(--font-heading);
+            font-size: 3rem;
             position: relative;
             z-index: 2;
             text-align: center;
@@ -57,56 +70,6 @@
         .artist-card:hover .artist-name {
             transform: scale(1.1);
             color: var(--color-primary);
-        }
-        .headliner img, .co-headliner img {
-            object-position: 50% 15%;
-        }
-        .headliner {
-            width: 100%;
-            aspect-ratio: 16/9;
-        }
-        .headliner .artist-name {
-            font-size: 6rem;
-        }
-        .co-headliner {
-            width: 100%;
-            aspect-ratio: 16/9;
-        }
-        .co-headliner .artist-name {
-            font-size: 5rem;
-        }
-        .artist-row {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .artist-row .artist-card {
-            flex: 1;
-            aspect-ratio: 1;
-        }
-        .artist-row .artist-name {
-            font-size: 2.5rem;
-        }
-        .artist-label {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: var(--color-primary);
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            z-index: 3;
-        }
-        @media (max-width: 768px) {
-            .artist-row {
-                flex-direction: column;
-            }
-            .headliner, .co-headliner, .artist-row .artist-card {
-                aspect-ratio: 1;
-            }
-            .headliner .artist-name { font-size: 4rem; }
-            .co-headliner .artist-name { font-size: 3rem; }
         }
     </style>
 </head>
@@ -136,31 +99,43 @@
 
     <section class="section">
         <div class="container fade-in">
-            <div class="lineup-container fade-in">
-                <a href="https://www.instagram.com/jaycritch/?hl=en" target="_blank" class="artist-card headliner">
-                    <div class="artist-label">HEADLINER</div>
-                    <img src="assets/images/lineup/jay-critch.jpeg" alt="Jay Critch">
-                    <div class="artist-name">Jay Critch</div>
-                </a>
-                <a href="https://www.instagram.com/xavtrudeau_/?hl=en" target="_blank" class="artist-card co-headliner">
-                    <div class="artist-label" style="background: #333;">CO-HEADLINER</div>
-                    <img src="assets/images/lineup/xav.jpeg" alt="XAV">
-                    <div class="artist-name">XAV</div>
-                </a>
-                <div class="artist-row">
-                    <a href="https://www.instagram.com/alhambra.band.musique/" target="_blank" class="artist-card">
-                        <img src="assets/images/lineup/alhambra-band.jpeg" alt="Alhambra Band">
-                        <div class="artist-name">Alhambra Band</div>
+            <div class="lineup-day fade-in">
+                <h2 class="day-title">URBAN ENGLISH DAY</h2>
+                <div class="day-subtitle">DAY 1 • R&B, Hip-Hop, Funk, and Soul</div>
+                <div class="artist-grid">
+                    <a href="https://www.instagram.com/jaycritch/?hl=en" target="_blank" class="artist-card">
+                        <img src="assets/images/lineup/jay-critch.jpeg" alt="Jay Critch">
+                        <div class="artist-name">Jay Critch</div>
                     </a>
-                    <a href="https://www.instagram.com/gretchnofficial/" target="_blank" class="artist-card">
-                        <img src="assets/images/lineup/gretchn.jpg" alt="GRETCH'N">
-                        <div class="artist-name">GRETCH'N</div>
+                    <a href="https://www.instagram.com/xavtrudeau_/?hl=en" target="_blank" class="artist-card">
+                        <img src="assets/images/lineup/xav.jpeg" alt="XAV">
+                        <div class="artist-name">XAV</div>
                     </a>
                     <a href="https://www.instagram.com/xxkatieclarkexx/" target="_blank" class="artist-card">
                         <img src="assets/images/lineup/katie-clarke.jpg" alt="Katie Clarke">
                         <div class="artist-name">Katie Clarke</div>
                     </a>
                 </div>
+            </div>
+
+            <div class="lineup-day fade-in" style="margin-top: 4rem;">
+                <h2 class="day-title" style="color: #fff;">FRENCH / INTERNATIONAL DAY</h2>
+                <div class="day-subtitle">DAY 2 • Afrobeat, French Rap, Global Sounds</div>
+                <div class="artist-grid">
+                    <a href="https://www.instagram.com/alhambra.band.musique/" target="_blank" class="artist-card" style="border-color: #444;">
+                        <img src="assets/images/lineup/alhambra-band.jpeg" alt="Alhambra Band">
+                        <div class="artist-name">Alhambra Band</div>
+                    </a>
+                    <a href="https://www.instagram.com/gretchnofficial/" target="_blank" class="artist-card" style="border-color: #444;">
+                        <img src="assets/images/lineup/gretchn.jpg" alt="GRETCH'N">
+                        <div class="artist-name">GRETCH'N</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 5rem;" class="fade-in">
+                <h2 style="font-family: var(--font-heading); color: var(--color-primary); font-size: 2.5rem; text-transform: uppercase;">MORE PERFORMERS TO COME...</h2>
+                <p style="margin-bottom: 2rem;">Stay tuned for our full lineup announcement!</p>
             </div>
             
             <div style="text-align: center; margin-top: 4rem;">
