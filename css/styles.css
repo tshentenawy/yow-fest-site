@@ -342,7 +342,7 @@ p {
 /* Shared Inner Page Header */
 .page-header {
   padding: 12rem 0 6rem;
-  background: var(--color-surface);
+  background: linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,1)), url('../assets/images/header-bg.jpeg') center/cover no-repeat;
   text-align: center;
   border-bottom: 1px solid #222;
 }
