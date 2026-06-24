@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOW Camp | YOW FEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .video-card {
+            background: #1a1a1a;
+            border: 2px solid #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .video-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-info {
+            padding: 1.5rem;
+        }
+        .video-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled">
+        <div class="navbar-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></a>
+            <button class="nav-toggle">☰</button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="lineup.html">Lineup</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="guide.html">Guide</a>
+                <a href="riseup.html">Rise Up</a>
+                <a href="sponsors.html">Sponsors</a>
+                <a href="yowcamp.html" class="active">YOW Camp</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display">YOW CAMP</h1>
+            <p>Exclusive festival performances and behind-the-scenes content.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container fade-in">
+            <h2 style="text-align: center; color: var(--color-primary); font-family: var(--font-heading); font-size: 3rem;">THE PERFORMANCES</h2>
+            
+            <div class="video-grid" id="yowcamp-videos">
+                <!-- Videos will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo"><img src="assets/images/logo.png" alt="YOW FEST Logo"></div>
+            <div class="copyright">
+                &copy; 2026 YOWFEST & Rise Up Canada. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
