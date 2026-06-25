@@ -45,4 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
+
+    // Fallback for iOS / Safari if IntersectionObserver fails to trigger
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            if (!el.classList.contains('visible')) {
+                el.classList.add('visible');
+            }
+        });
+    }, 1500);
 });
